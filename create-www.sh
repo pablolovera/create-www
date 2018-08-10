@@ -24,24 +24,23 @@ apt-get install apachetop
 
 echo "Instalando o PHP 7"
 
-echo "Fazendo backup do source.list"
-sudo cp /etc/apt/sources.list /etc/apt/sources.list.backup-autoinstall
+#echo "Fazendo backup do source.list"
+#sudo cp /etc/apt/sources.list /etc/apt/sources.list.backup-autoinstall
 
-echo "Adicionando o dotdeb PHP7 repositórios"
-deb http://packages.dotdeb.org jessie all
-deb-src http://packages.dotdeb.org jessie all
+#echo "Adicionando o dotdeb PHP7 repositórios"
+#deb http://packages.dotdeb.org jessie all
+#deb-src http://packages.dotdeb.org jessie all
 
-echo "Configurando da chave gpg…"
-wget https://www.dotdeb.org/dotdeb.gpg
-apt-key add dotdeb.gpg
+#echo "Configurando da chave gpg…"
+#wget https://www.dotdeb.org/dotdeb.gpg
+#apt-key add dotdeb.gpg
 
-echo "Atualizando os repositórios"
-apt-get update
+#echo "Atualizando os repositórios"
+#apt-get update
 
 echo "Instalando o php e bibliotecas"
-apt-get install php7.0
 
-apt-get install libapache2-mod-php7.0 php7.0-mysql php7.0-curl php7.0-json
+apt-get install php7.0 libapache2-mod-php7.0 php7.0-curl php7.0-dom php7.0-exif php7.0-fileinfo php7.0-gd php7.0-json php7.0-mbstring php7.0-mcrypt php7.0-mysql php7.0-mysqli php7.0-pgsql php7.0-sqlite3 php7.0-zip php7.0-intl
 
 
 
@@ -66,15 +65,7 @@ apt-get install curl
 
 echo "Instalando o Composer"
 
-curl -sS https://getcomposer.org/installer | php
-
-php -r "readfile('https://getcomposer.org/installer');" | php
-
-curl -sS https://getcomposer.org/installer | php -- --install-dir=bin
-
-curl -sS https://getcomposer.org/installer | php -- --filename=composer
-
-curl -sS https://getcomposer.org/installer | php -- --version=1.0.0-alpha11
+apt-get install compose
 
 
 # RESTART
